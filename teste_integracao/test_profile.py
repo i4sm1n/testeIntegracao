@@ -1,6 +1,3 @@
-import unittest
-import requests
-import json
 from utils.main_funtions import *
 
 class TestProile(unittest.TestCase):
@@ -13,7 +10,6 @@ class TestProile(unittest.TestCase):
 
         json_data = json.loads(response.content)
 
-        #baixa mutabilidade
         adm = json_data[0]
         assert_in("id", adm)
         assert_equal(type(adm['id']), int)
@@ -65,4 +61,3 @@ class TestProile(unittest.TestCase):
         assert_in("type", coor)
         assert_equal(type(coor['type']), str)
         assert_equal(coor['type'], "COORDINATOR")
-        pass
